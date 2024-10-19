@@ -1,5 +1,6 @@
 import React from "react";
 import Playground from "./Playground.jsx";
+import { winning } from "./winning";
 import { FaHandshakeAngle } from "react-icons/fa6";
 import { FaSmileWink } from "react-icons/fa";
 import { FaSadTear } from "react-icons/fa";

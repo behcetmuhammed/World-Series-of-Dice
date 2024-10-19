@@ -3,6 +3,7 @@ import { GiBackForth } from "react-icons/gi";
 import Tooltip from "./Tooltip.jsx"; // Tooltip bileşenini içe aktar
 import "../css/playground.css";
 import "../css/header.css";
+import { winning } from "./winning";
 
 // Zar resimleri
 import dice1 from "../image/dice1.png";
@@ -71,10 +72,13 @@ function Playground() {
 
     // 3 saniye sonra zarları durdur ve rastgele bir değer al
     setTimeout(() => {
-      clearInterval(intervalId); // döngüyü durdur
-      setDiceOne(getRandomNumber());
-      setDiceTwo(getRandomNumber());
+      clearInterval(intervalId);
+      const finalDiceOne = getRandomNumber();
+      const finalDiceTwo = getRandomNumber();
+      setDiceOne(finalDiceOne);
+      setDiceTwo(finalDiceTwo);
       setIsRolling(false);
+      winning(finalDiceOne, finalDiceTwo); // Son değerleri winning fonksiyonuna geçir
     }, 3000);
   };
 
@@ -84,15 +88,15 @@ function Playground() {
   }
 
   //Kazanan
-  function winning() {
-    if (diceOne > diceTwo) {
-      console.log("Kazandın");
-    } else if (diceOne === diceTwo) {
-      console.log("Berabere");
-    } else {
-      console.log("Kaybettin");
-    }
-  }
+  // function winning() {
+  //   if (diceOne > diceTwo) {
+  //     console.log("Kazandın");
+  //   } else if (diceOne === diceTwo) {
+  //     console.log("Berabere");
+  //   } else {
+  //     console.log("Kaybettin");
+  //   }
+  // }
 
   return (
     <div className="middle-area">
@@ -126,7 +130,7 @@ function Playground() {
         <div className="dice-area">
           {renderDice(diceOne)}
           {renderDice(diceTwo)}
-          {winning()}
+          {/* {winning()} */}
         </div>
       </div>
       {/* Button */}
