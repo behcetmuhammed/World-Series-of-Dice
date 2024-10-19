@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fefada;
+  gap: 30px;
+  font-family: "Caveat", cursive;
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.draw-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eddb56;
+}

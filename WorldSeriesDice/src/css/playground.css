@@ -1,0 +1,58 @@
+.middle-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 518px;
+}
+
+.button-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 30%;
+  font-size: 40px;
+  background-color: #00cb96;
+  color: #fefada;
+  cursor: pointer;
+}
+
+.player-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 150px;
+}
+
+.player-area input {
+  height: 45px;
+  width: 250px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #00cb96;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.player-area input::placeholder {
+  color: #00cb96;
+  font-family: "Caveat", cursive;
+  font-size: 40px;
+  justify-content: center;
+}
+
+.player-area input.filled-input {
+  color: #00cb96;
+  font-family: "Caveat", cursive;
+  font-size: 40px;
+  justify-content: center;
+  background-color: none;
+}
+
+/* Yeni CSS sınıfı */
+.player-area input.empty-input {
+  background-color: transparent; /* Boş olduğunda arka plan rengi */
+  border: none; /* Boş olduğunda border yok */
+}

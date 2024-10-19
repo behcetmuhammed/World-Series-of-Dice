@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  gap: 4px;
+  font-size: 25px;
+  font-family: "Caveat", cursive;
+  color: #fefada;
+}
+
+.footer-icon {
+  display: flex;
+}
+
+.footer-text {
+  font-size: 30px; /* veya istediğin değeri yazabilirsin */
+}
