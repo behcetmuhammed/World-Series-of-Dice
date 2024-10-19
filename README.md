@@ -82,17 +82,17 @@ Projeyi yerel bilgisayarınıza kurmak için aşağıdaki adımları takip edebi
 ### Zar Sonuçları
 
 - Bekleme Ekranı
-  ![Zar Sonuçları](./src/image/Screenshots/wait-ss.png)
+  ![Zar Sonuçları](./WorldSeriesDice/src/image/Screenshots/wait-ss.png)
 - Kazanma Mesajı
-  ![Zar Sonuçları](./src/image/Screenshots/win-ss.png)
+  ![Zar Sonuçları](./WorldSeriesDice/src/image/Screenshots/win-ss.png)
 - Berabere Mesajı
-  ![Zar Sonuçları](./src/image/Screenshots/draw-ss.png)
+  ![Zar Sonuçları](./WorldSeriesDice/src/image/Screenshots/draw-ss.png)
 - Kaybetme Mesajı
-  ![Zar Sonuçları](./src/image/Screenshots/lost-ss.png)
+  ![Zar Sonuçları](./WorldSeriesDice/src/image/Screenshots/lost-ss.png)
 - İsim Yenileme Ekranı
-  ![Zar Sonuçları](./src/image/Screenshots/changeName.png)
+  ![Zar Sonuçları](./WorldSeriesDice/src/image/Screenshots/changeName.png)
 - Bilgisayar [Player2] İsim Ekranı
-  ![Zar Sonuçları](./src/image/Screenshots/pcName.png)
+  ![Zar Sonuçları](./WorldSeriesDice/src/image/Screenshots/pcName.png)
 
 ## Katkıda Bulunma
 
