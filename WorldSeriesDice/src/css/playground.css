@@ -1,7 +1,7 @@
 .middle-area {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   height: 518px;
   gap: 20px;
@@ -67,4 +67,17 @@
   background-color: #00cb96;
   color: #fefada;
   cursor: pointer;
+}
+
+.game-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fefada;
+  font-size: 60px;
+  font-family: "Caveat", cursive;
+}
+
+.game-status h2 {
+  margin: 0;
 }

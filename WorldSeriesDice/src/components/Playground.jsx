@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { GiBackForth } from "react-icons/gi";
-import Tooltip from "./Tooltip.jsx"; // Tooltip bileşenini içe aktar
+import Tooltip from "./Tooltip.jsx";
 import "../css/playground.css";
-import "../css/header.css";
 import { winning } from "./winning";
+import { FaHandshakeAngle } from "react-icons/fa6";
+import { FaSmileWink } from "react-icons/fa";
+import { FaSadTear } from "react-icons/fa";
+import { FaHourglassStart } from "react-icons/fa6";
 
 // Zar resimleri
 import dice1 from "../image/dice1.png";
@@ -15,18 +18,18 @@ import dice6 from "../image/dice6.png";
 
 function Playground() {
   const [playerOne, setPlayerOne] = useState("Player1 [Siz]");
-  const [playerTwo, setplayerTwo] = useState("Player2 [PC]");
+  const [playerTwo, setPlayerTwo] = useState("Player2 [PC]");
   const [inputValue, setInputValue] = useState("");
   const [isRolling, setIsRolling] = useState(false);
-  let intervalId; // Aralık ID
+  const [resultMessage, setResultMessage] = useState("Wait"); // Oyun durumu mesajı
+  let intervalId;
 
   /*Zarlar*/
-  const [diceOne, setDiceOne] = useState(1); // İlk zarın başlangıç değeri
-  const [diceTwo, setDiceTwo] = useState(1); // İkinci zarın başlangıç değeri
+  const [diceOne, setDiceOne] = useState(1);
+  const [diceTwo, setDiceTwo] = useState(1);
 
   useEffect(() => {
     return () => {
-      // bileşen kaldırıldığında intervali temizle
       clearInterval(intervalId);
     };
   }, []);
@@ -40,7 +43,6 @@ function Playground() {
     setInputValue(x);
   };
 
-  // Zarları render etme fonksiyonu
   const renderDice = (diceValue) => {
     switch (diceValue) {
       case 1:
@@ -60,17 +62,17 @@ function Playground() {
     }
   };
 
-  //Butona basıldığı zaman
   const clickButton = () => {
     setIsRolling(true);
+    setResultMessage("Wait");
 
     // Zarları döndürmeye başla
     intervalId = setInterval(() => {
       setDiceOne(getRandomNumber());
       setDiceTwo(getRandomNumber());
-    }, 100); // 100 ms aralıklarla zar değerlerini güncelle
+    }, 100);
 
-    // 3 saniye sonra zarları durdur ve rastgele bir değer al
+    // 3 saniye sonra zarları durdur
     setTimeout(() => {
       clearInterval(intervalId);
       const finalDiceOne = getRandomNumber();
@@ -78,29 +80,31 @@ function Playground() {
       setDiceOne(finalDiceOne);
       setDiceTwo(finalDiceTwo);
       setIsRolling(false);
-      winning(finalDiceOne, finalDiceTwo); // Son değerleri winning fonksiyonuna geçir
+
+      // Sonucu belirle ve mesajı güncelle
+      const result = winning(finalDiceOne, finalDiceTwo);
+      if (result === "win") {
+        setResultMessage("You Win!");
+      } else if (result === "draw") {
+        setResultMessage("Draw!");
+      } else {
+        setResultMessage("You Lost!");
+      }
     }, 3000);
   };
 
-  //1 ile 6 arasında Randum sayı
   function getRandomNumber() {
     return Math.floor(Math.random() * 6) + 1;
   }
 
-  //Kazanan
-  // function winning() {
-  //   if (diceOne > diceTwo) {
-  //     console.log("Kazandın");
-  //   } else if (diceOne === diceTwo) {
-  //     console.log("Berabere");
-  //   } else {
-  //     console.log("Kaybettin");
-  //   }
-  // }
-
   return (
     <div className="middle-area">
-      {/* Player Text */}
+      {/* Oyun Durumu Mesajı */}
+      <div className="game-status">
+        <h2>{resultMessage}</h2>{" "}
+        {/* Wait, You Win, Draw, You Lost mesajları burada */}
+      </div>
+
       <div className="player-area">
         <Tooltip text="İsminizi değiştirmek için tıklayınız!">
           <div>
@@ -125,15 +129,14 @@ function Playground() {
           </div>
         </Tooltip>
       </div>
-      {/* Game Area */}
+
       <div className="game-area">
         <div className="dice-area">
           {renderDice(diceOne)}
           {renderDice(diceTwo)}
-          {/* {winning()} */}
         </div>
       </div>
-      {/* Button */}
+
       <button onClick={clickButton} className="button-area">
         <GiBackForth className="button-icon" />
       </button>
