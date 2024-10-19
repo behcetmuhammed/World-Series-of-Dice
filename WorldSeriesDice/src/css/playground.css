@@ -4,25 +4,16 @@
   justify-content: space-around;
   align-items: center;
   height: 518px;
+  gap: 20px;
 }
 
-.button-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 30%;
-  font-size: 40px;
-  background-color: #00cb96;
-  color: #fefada;
-  cursor: pointer;
-}
-
+/*! Player Text*/
 .player-area {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 150px;
+  margin-left: 50px;
 }
 
 .player-area input {
@@ -51,8 +42,29 @@
   background-color: none;
 }
 
-/* Yeni CSS sınıfı */
 .player-area input.empty-input {
   background-color: transparent; /* Boş olduğunda arka plan rengi */
   border: none; /* Boş olduğunda border yok */
+}
+
+/*! Game Area*/
+
+.dice-area {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 120px;
+}
+
+/*! Button*/
+.button-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 30%;
+  font-size: 40px;
+  background-color: #00cb96;
+  color: #fefada;
+  cursor: pointer;
 }

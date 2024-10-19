@@ -9,9 +9,29 @@
   font-weight: bold;
 }
 
-.draw-icon {
+.wait-icon,
+.draw-icon,
+.youWin-icon,
+.youLost-icon {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #eddb56;
+}
+
+.wait,
+.win,
+.lost,
+.draw {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.win,
+.lost,
+.draw {
+  display: none;
 }
